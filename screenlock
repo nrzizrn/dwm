@@ -1,0 +1,2 @@
+# file used with dwm to not have gnome-screensaver use all the bleedin memory (now stays around 10MB, before was maybe 600MB after a couple of days of locking/unlocking)
+killall gnome-screensaver; sleep 1; gnome-screensaver; gnome-screensaver-command -l
