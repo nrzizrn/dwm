@@ -21,7 +21,7 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const int dzenbar = 1; /* Monitor on which dzen bar exists - -1 means no bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "VM1", "VM2", "IRC", "XMPP", "STUFF", "MAIL", "MISC", "WEB3", "WEB2", "WEB1" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "VM1", "VM2", "VM3", "IRC", "XMPP", "STUFF", "MAIL", "MISC", "WEB3", "WEB2", "WEB1" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -91,7 +91,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F2,      spawn,           {.v = downvol } },
     { MODKEY,                       XK_F1,      spawn,           {.v = togglevol } },
     { MODKEY|ShiftMask,             XK_Return,  spawn,           {.v = termcmd } },
-    { MODKEY,                       XK_b,       togglebar,       {0} },
+    { MODKEY|MODALT,                XK_b,       togglebar,       {0} },
     { MODKEY,                       XK_p,       spawn,           {.v = dmenucmd } },
     { MODKEY,                       XK_j,       focusstack,      {.i = +1 } },
     { MODKEY,                       XK_k,       focusstack,      {.i = -1 } },
@@ -106,7 +106,7 @@ static Key keys[] = {
     { MODKEY|MODALT,                XK_f,       setlayout,       {.v = &layouts[1]} }, //NULL
     { MODKEY|MODALT,                XK_space,   setlayout,       {.v = &layouts[2]} }, //monocle
     { MODKEY|MODALT,                XK_h,       setlayout,       {.v = &layouts[3]} }, //bstackhoriz
-    { MODKEY|MODALT,                XK_b,       setlayout,       {.v = &layouts[4]} }, //bstack
+    //{ MODKEY|MODALT,                XK_b,       setlayout,       {.v = &layouts[4]} }, //bstack
     { MODKEY|MODALT,                XK_s,       setlayout,       {.v = &layouts[5]} }, //spiral
     { MODKEY|MODALT,                XK_w,       setlayout,       {.v = &layouts[6]} }, //dwindle
     { MODKEY|MODALT,                XK_g,       setlayout,       {.v = &layouts[7]} }, //grid
@@ -133,20 +133,21 @@ static Key keys[] = {
     // VM
     TAGKEYS(                        XK_n,                        9)
     TAGKEYS(                        XK_m,                       10)
+    TAGKEYS(                        XK_b,                       11)
     // IRC
-    TAGKEYS(                        XK_q,                       11)
-    // XMPP
-    TAGKEYS(                        XK_w,                       12)
+    TAGKEYS(                        XK_q,                       12)
+    // XMP
+    TAGKEYS(                        XK_w,                       13)
     // STUFF
-    TAGKEYS(                        XK_e,                       13)
+    TAGKEYS(                        XK_e,                       14)
     // MAIL
-    TAGKEYS(                        XK_r,                       14)
+    TAGKEYS(                        XK_r,                       15)
     // MISC
-    TAGKEYS(                        XK_z,                       15)
+    TAGKEYS(                        XK_z,                       16)
     // WEB
-    TAGKEYS(                        XK_7,                       16)
-    TAGKEYS(                        XK_8,                       17)
-    TAGKEYS(                        XK_9,                       18)
+    TAGKEYS(                        XK_7,                       17)
+    TAGKEYS(                        XK_8,                       18)
+    TAGKEYS(                        XK_9,                       19)
     { MODKEY|ShiftMask,             XK_slash,       quit,            {0} },
 };
 
