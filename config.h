@@ -131,9 +131,9 @@ static Key keys[] = {
     TAGKEYS(                        XK_s,                        7)
     TAGKEYS(                        XK_d,                        8)
     // VM
-    TAGKEYS(                        XK_n,                        9)
-    TAGKEYS(                        XK_m,                       10)
-    TAGKEYS(                        XK_b,                       11)
+    TAGKEYS(                        XK_b,                        9)
+    TAGKEYS(                        XK_n,                       10)
+    TAGKEYS(                        XK_m,                       11)
     // IRC
     TAGKEYS(                        XK_q,                       12)
     // XMP
