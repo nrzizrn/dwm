@@ -21,7 +21,7 @@ static const Bool topbar            = True;     /* False means bottom bar */
 static const int dzenbar = 1; /* Monitor on which dzen bar exists - -1 means no bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "VM1", "VM2", "VM3", "IRC", "XMPP", "STUFF", "MAIL", "MISC", "WEB3", "WEB2", "WEB1" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "VM1", "VM2", "VM3", "IRC", "XMPP", "STUFF", "MAIL", "MISC", "WEB3", "WEB2", "WEB1" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -130,24 +130,25 @@ static Key keys[] = {
     TAGKEYS(                        XK_a,                        6)
     TAGKEYS(                        XK_s,                        7)
     TAGKEYS(                        XK_d,                        8)
+    TAGKEYS(                        XK_f,                        9)
     // VM
-    TAGKEYS(                        XK_b,                        9)
-    TAGKEYS(                        XK_n,                       10)
-    TAGKEYS(                        XK_m,                       11)
+    TAGKEYS(                        XK_b,                       10)
+    TAGKEYS(                        XK_n,                       11)
+    TAGKEYS(                        XK_m,                       12)
     // IRC
-    TAGKEYS(                        XK_q,                       12)
+    TAGKEYS(                        XK_q,                       13)
     // XMP
-    TAGKEYS(                        XK_w,                       13)
+    TAGKEYS(                        XK_w,                       14)
     // STUFF
-    TAGKEYS(                        XK_e,                       14)
+    TAGKEYS(                        XK_e,                       15)
     // MAIL
-    TAGKEYS(                        XK_r,                       15)
+    TAGKEYS(                        XK_r,                       16)
     // MISC
-    TAGKEYS(                        XK_z,                       16)
+    TAGKEYS(                        XK_z,                       17)
     // WEB
-    TAGKEYS(                        XK_7,                       17)
-    TAGKEYS(                        XK_8,                       18)
-    TAGKEYS(                        XK_9,                       19)
+    TAGKEYS(                        XK_7,                       18)
+    TAGKEYS(                        XK_8,                       19)
+    TAGKEYS(                        XK_9,                       20)
     { MODKEY|ShiftMask,             XK_slash,       quit,            {0} },
 };
 
