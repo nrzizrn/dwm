@@ -2,9 +2,9 @@
 
 
 /* appearance */
-#define BOTTOM_BAR_HEIGHT 15
+#define BOTTOM_BAR_HEIGHT 14
 
-static const char font[]            = "Monaco-9";
+static const char font[] = "-*-terminus-medium-r-normal-*-3-*-*-*-*-*-*-*";
 
 /* term colors */
 static const char normbordercolor[] = "#2D2D2D";
@@ -19,9 +19,6 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 static const int dzenbar = 1; /* Monitor on which dzen bar exists - -1 means no bar */
-
-/* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "VM1", "VM2", "VM3", "IRC", "XMPP", "STUFF", "MAIL", "MISC", "WEB3", "WEB2", "WEB1" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -80,6 +77,22 @@ static const char *dexkmap[] = { "setxkbmap", "de", NULL};
 /* shortkeys */
 static const char *termcmd[] = {"urxvt", NULL};
 
+
+/* tagging */
+//                             1    2    3    4    5    6
+static const char *tags[] = { "1", "2", "3", "4", "5", "6",
+//                             a    s    d    f    g
+                              "7", "8", "9", "10", "11",
+//                             t     y     u      i    o
+                              "12", "13", "14", "15", "16",
+//                              b      n      m
+                              "VM1", "VM2", "VM3",
+//                              q         w          e       r
+                              "IRC", "DOWNLOADS", "MUSIC", "MAIL",
+//                              z       7       8       9
+                              "MISC", "WEB3", "WEB2", "WEB1" };
+
+
 static Key keys[] = {
     /* modifier                     key        function         argument */
     { MODKEY|ShiftMask,             XK_p,       spawn,           {.v = esxkmap } },
@@ -91,7 +104,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F2,      spawn,           {.v = downvol } },
     { MODKEY,                       XK_F1,      spawn,           {.v = togglevol } },
     { MODKEY|ShiftMask,             XK_Return,  spawn,           {.v = termcmd } },
-    { MODKEY|MODALT,                XK_b,       togglebar,       {0} },
+    { MODKEY,                       XK_space,   togglebar,       {0} },
     { MODKEY,                       XK_p,       spawn,           {.v = dmenucmd } },
     { MODKEY,                       XK_j,       focusstack,      {.i = +1 } },
     { MODKEY,                       XK_k,       focusstack,      {.i = -1 } },
@@ -131,24 +144,32 @@ static Key keys[] = {
     TAGKEYS(                        XK_s,                        7)
     TAGKEYS(                        XK_d,                        8)
     TAGKEYS(                        XK_f,                        9)
+    TAGKEYS(                        XK_g,                       10)
+    // third terms
+    TAGKEYS(                        XK_t,                       11)
+    TAGKEYS(                        XK_y,                       12)
+    TAGKEYS(                        XK_u,                       13)
+    TAGKEYS(                        XK_i,                       14)
+    TAGKEYS(                        XK_o,                       15)
+
     // VM
-    TAGKEYS(                        XK_b,                       10)
-    TAGKEYS(                        XK_n,                       11)
-    TAGKEYS(                        XK_m,                       12)
+    TAGKEYS(                        XK_b,                       16)
+    TAGKEYS(                        XK_n,                       17)
+    TAGKEYS(                        XK_m,                       18)
     // IRC
-    TAGKEYS(                        XK_q,                       13)
-    // XMP
-    TAGKEYS(                        XK_w,                       14)
-    // STUFF
-    TAGKEYS(                        XK_e,                       15)
+    TAGKEYS(                        XK_q,                       19)
+    // DOWNLOADS
+    TAGKEYS(                        XK_w,                       20)
+    // MUSIC
+    TAGKEYS(                        XK_e,                       21)
     // MAIL
-    TAGKEYS(                        XK_r,                       16)
+    TAGKEYS(                        XK_r,                       22)
     // MISC
-    TAGKEYS(                        XK_z,                       17)
+    TAGKEYS(                        XK_z,                       23)
     // WEB
-    TAGKEYS(                        XK_7,                       18)
-    TAGKEYS(                        XK_8,                       19)
-    TAGKEYS(                        XK_9,                       20)
+    TAGKEYS(                        XK_7,                       24)
+    TAGKEYS(                        XK_8,                       25)
+    TAGKEYS(                        XK_9,                       26)
     { MODKEY|ShiftMask,             XK_slash,       quit,            {0} },
 };
 
